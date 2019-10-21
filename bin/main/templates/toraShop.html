@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>翔平の買い物サイト</title>
+</head>
+
+<body>
+	<p>ようこそショッピングサイトへ</p>
+	<h3>商品一覧</h3>
+	<form method="post" action="">
+		<table>
+			<tr>
+				<td>
+					<p>サボテン</p>
+					<p> 価格1000円</p><input type="button" value="カートに追加">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>ヨット</p>
+					<p> 価格100000円</p><input type="button" value="カートに追加">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>犬</p>
+					<p> 価格1000円</p><input type="button" value="カートに追加">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>ギター</p>
+					<p> 価格8000円</p><input type="button" value="カートに追加">
+				</td>
+			</tr>
+		</table>
+
+	<th:block th:if="${name} and !=${name}">
+	hello[[${name]]
+	<p th:text="${message}"></p>
+
+	</form>
+
+</body>
+</html>
