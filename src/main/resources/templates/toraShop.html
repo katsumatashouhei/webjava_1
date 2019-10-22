@@ -8,7 +8,8 @@
 <body>
 	<p>ようこそショッピングサイトへ</p>
 	<h3>商品一覧</h3>
-	<form method="post" action="">
+
+	<form method="post" action="toraShop">
 		<table>
 			<tr>
 				<td>
@@ -35,12 +36,9 @@
 				</td>
 			</tr>
 		</table>
-
-	<th:block th:if="${name} and !=${name}">
-	hello[[${name]]
-	<p th:text="${message}"></p>
-
 	</form>
+
+	<input type="button" value="購入する"/>
 
 </body>
 </html>
