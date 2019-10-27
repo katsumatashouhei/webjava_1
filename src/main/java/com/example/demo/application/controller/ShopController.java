@@ -1,11 +1,14 @@
 package com.example.demo.application.controller;
 
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.example.demo.application.model.Item;
+import com.example.demo.application.model.ListService;
 
 @Controller
 public class ShopController {
@@ -13,11 +16,15 @@ public class ShopController {
   @Autowired
   HttpSession session;
 
+  ListService listService;
+
  @RequestMapping(value="/toraShop")
- public String viewTop(HttpSession session, Model model,
+ public Map<Integer, Item> list(HttpSession session, Model model,
      @RequestParam(name = "name", required = false) String name) {
 
-   return "toraShop";
+   Map<Integer, Item> list = listService.getItemList();
+
+   return list;
 
    }
 //  public ModelAndView index(ModelAndView mav) {

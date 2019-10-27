@@ -11,34 +11,39 @@
 
 	<form method="post" action="toraShop">
 		<table>
+			<tr th:each = "object:${list}" th:object="${object}">
+				<td th:text="*{name}"></td>
+				<td th:text="*{price}"></td>
+			</tr>
 			<tr>
 				<td>
-					<p>サボテン</p>
-					<p> 価格1000円</p><input type="button" value="カートに追加">
+					<span>サボテン</span>
+					<span> 価格1000円</span><input type="button" value="カートに追加">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>ヨット</p>
-					<p> 価格100000円</p><input type="button" value="カートに追加">
+					<span>ヨット</span>
+					<span> 価格100000円</span><input type="button" value="カートに追加">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>犬</p>
-					<p> 価格1000円</p><input type="button" value="カートに追加">
+					<span>犬の絵</span>
+					<span> 価格1000円</span><input type="button" value="カートに追加">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>ギター</p>
-					<p> 価格8000円</p><input type="button" value="カートに追加">
+					<span>ギター</span>
+					<span> 価格8000円</span><input type="button" value="カートに追加">
 				</td>
 			</tr>
 		</table>
+		<input type="button" value="購入する" onclick="location.href='cartConfirm.html'"/>
 	</form>
 
-	<input type="button" value="購入する"/>
+
 
 </body>
 </html>
