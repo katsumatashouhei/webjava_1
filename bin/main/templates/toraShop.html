@@ -11,14 +11,16 @@
 
 	<form method="post" action="toraShop">
 		<table>
-			<tr th:each = "object:${list}" th:object="${object}">
-				<td th:text="*{name}"></td>
-				<td th:text="*{price}"></td>
+			<tr th:each = "tora:${toras}">
+				<td>商品番号</td><td th:text="${tora.key}"></td>
+				<td th:text="${tora.value.name}"></td>
+				<td th:text="${tora.value.price}"></td>
+				<input type="button" value="カートに追加"/>
 			</tr>
 			<tr>
 				<td>
 					<span>サボテン</span>
-					<span> 価格1000円</span><input type="button" value="カートに追加">
+					<span> 価格1000円</span>
 				</td>
 			</tr>
 			<tr>

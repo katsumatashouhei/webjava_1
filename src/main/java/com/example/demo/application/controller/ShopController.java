@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.application.model.Item;
+import com.example.demo.application.model.ListForm;
 import com.example.demo.application.model.ListService;
 
 @Controller
@@ -18,15 +19,26 @@ public class ShopController {
 
   ListService listService;
 
- @RequestMapping(value="/toraShop")
- public Map<Integer, Item> list(HttpSession session, Model model,
+ @RequestMapping(value="/toraShop" )
+ public String list(HttpSession session, Model model,
      @RequestParam(name = "name", required = false) String name) {
 
-   Map<Integer, Item> list = listService.getItemList();
+   listService = new ListService();
+   Map<Integer, Item> toraMap = listService.getItemList();
 
-   return list;
+   model.addAttribute("toras" ,toraMap);
+
+   return "toraShop";
 
    }
+
+ public String order(ListForm listForm) {
+
+   int itemId = listForm.getItemId();
+   
+
+   return "cartConfirm";
+ }
 //  public ModelAndView index(ModelAndView mav) {
 //    //View
 //
